@@ -46,22 +46,10 @@ function addItem() {
 }
 
 function editItem(button) {
-    var editTextField = document.getElementById('edit-name')
-
     var updateValue = button.parentNode.parentNode.firstChild.innerText
     var updatedValue = button.parentNode.parentNode.firstChild
-
-    editTextField.value = updateValue
-
-
-    $(document).ready(function() {
-        $("#editButtonPopUp").modal('show');
-    });
-
-    $('#editButtonPopUp').on('click', '#saveButton', function() {
-        updatedValue.innerText = editTextField.value
-        $('#editButtonPopUp').modal('hide');
-    });
+    var editValue = prompt("Enter update value", updateValue)
+    updatedValue.innerText = editValue
 }
 
 function deleteItem(button) {
